@@ -6,6 +6,9 @@
 
 #include "system.h"
 void print_minios(char* str);
+void add(char *, char *);
+void Fork();
+void IPC();
 
 int main() {
     print_minios("[MiniOS SSU] Hello, World!");
@@ -16,13 +19,30 @@ int main() {
         // readline을 사용하여 입력 받기
         input = readline("커맨드를 입력하세요(종료:exit) : ");
 
-        if (strcmp(input,"exit") == 0) {
+        if (strcmp(input, "exit") == 0) {
             break;
         }
 
-        if (strcmp(input,"minisystem") == 0){
+        else if (strcmp(input, "minisystem") == 0){
             minisystem();
         }
+		
+		else if (strcmp(input, "add") == 0) {
+			char *a, *b;
+			a = readline("첫 번째 값 : ");
+			b = readline("두 번째 값 : ");
+			
+			add(a, b);
+		}
+		
+		else if (strcmp(input, "fork") == 0) {
+			Fork();
+		}
+
+        else if (strcmp(input, "ipc") == 0) {
+			IPC();
+		}
+
         else system(input);
     }
 
@@ -34,5 +54,5 @@ int main() {
 }
 
 void print_minios(char* str) {
-        printf("%s\n",str);
+        printf("%s\n", str);
 }
