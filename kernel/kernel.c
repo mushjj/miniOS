@@ -6,13 +6,9 @@
 
 #include "system.h"
 void print_minios(char* str);
-void add(char *, char *);
-void Fork();
-void IPC();
 
 int main() {
     print_minios("[MiniOS SSU] Hello, World!");
-
     char *input;
 
     while(1) {
@@ -41,6 +37,10 @@ int main() {
 
         else if (strcmp(input, "ipc") == 0) {
 			IPC();
+		}
+
+        else if (strcmp(input, "est_pi") == 0) {
+			Est_PI();
 		}
 
         else system(input);
