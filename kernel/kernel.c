@@ -43,6 +43,10 @@ int main() {
 			Est_PI();
 		}
 
+        else if (strcmp(input, "rrs") == 0) {
+			RRS();
+		}
+
         else system(input);
     }
 

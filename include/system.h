@@ -7,3 +7,4 @@ void add(char *, char *);
 void Fork();
 void IPC();
 void Est_PI();
+void RRS();
